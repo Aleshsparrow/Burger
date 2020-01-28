@@ -1,5 +1,5 @@
 CREATE DATABASE burgers_db;
-use burgerS_db;
+use burgers_db;
 
 CREATE TABLE burgers(
     id INTEGER AUTO_INCREMENT,
