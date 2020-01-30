@@ -1,7 +1,66 @@
 
+<h1>Burgers!</h1>
+
+<img src="/public/burger.jpg" style="height: 200px; width: 200px;" alt="burger">
+{{!-- <h2>Cats that are not sleepy!</h2> --}}
+
 <ul>
   {{#each burgers}}
-    {{burger_name}}
-     {{devoured}}
+    {{#unless devoured}}
+    <li>
+	    {{this.burger_name}}
+
+	    <button class="eat-burger" data-id="{{this.id}}" data-newsleep="{{this.devoured}}">
+		    {{#if devoured}}SLEEP TIME!{{else}}DEVOUR IT{{/if}}
+	    </button>
+
+	    <button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
+    </li>
+    {{/unless}}
   {{/each}}
 </ul>
+
+{{!-- <h2>Cats that are sleepy!</h2> --}}
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      <li>
+	    {{this.burger_name}}
+
+	    <button class="eat-burger" data-id="{{this.id}}" data-newsleep="{{this.devoured}}">
+		    {{#if devoured}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+	    </button>
+
+	    <button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
+    </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form>
+
+  <div class="form-group">
+    <label for="burger">Burger:</label>
+    <input type="text" id="burger" name="name">
+  </div>
+{{!-- 
+  <div class="form-group">
+    <label for="sleepy">Sleepy?</label><br>
+    <input type="radio" name="devoured" value="1" checked> Sleepy!<br>
+    <input type="radio" name="devoured" value="0"> Awake
+  </div> --}}
+
+  <button id="submit" type="submit">Add Burger</button>
+</form>
+
+<script>
+    $(document).on("click", ".eat-burger", (event) => {
+    // event.preventDefault()
+    console.log("click")
+    console.log($(this));
+    var value = $(this).attr("data-id")
+    console.log(value);
+})
+</script>
