@@ -1,3 +1,4 @@
+
 console.log("loading")
 
 
@@ -11,6 +12,7 @@ $(document).on("click", "#submit", (event) =>{
       burger_name: $("#burger").val().trim(),
       devoured: false
     };
+    $(ul).append(newBurger)
 
     $.ajax("/api/burgers", {
         type: "POST",
