@@ -14,15 +14,23 @@ router.get("/", function(req, res) {
     });
   });
 
+  
+
   router.post("/api/burgers", function(req, res) {
+    console.log("hit")
+    console.log(req.body.devoured);
+    var devoured = false
+    if(req.body.devoured == "true"){
+      devoured = true
+    }
+    
     burger.create([
       "burger_name", "devoured"
     ], [
-      req.body.burger_name, req.body.devoured
+      req.body.burger_name, devoured
     ], function(result) {
       // Send back the ID of the new quote
-      res.json({ id: result.insertId });
-      res.send(result)
+      res.redirect("/");
     });
   });
   

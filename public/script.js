@@ -12,26 +12,25 @@ $(document).on("click", "#submit", (event) =>{
       burger_name: $("#burger").val().trim(),
       devoured: false
     };
-    $(ul).append(newBurger)
-
+    console.log(newBurger);
+    
     $.ajax("/api/burgers", {
         type: "POST",
         data: newBurger
       }).then(
-        function() {
+        function(data) {
           console.log("created new burger");
           // Reload the page to get the updated list
           location.reload();
         })
 })
 
-// $(document).on("click", ".eat-burger", (event) => {
-//     // event.preventDefault()
-//     console.log("click")
-//     console.log($(this));
-//     var value = $(this).attr("data-id")
-//     console.log(value);
-// })
+$(".eat-burger").on("click",  (event) => {
+    // event.preventDefault()
+    console.log("click")
+    var value = $(this).attr("info")
+    console.log(value);
+})
 
 $(document).on("click", ".delete-burger", (event) => {
     event.preventDefault()

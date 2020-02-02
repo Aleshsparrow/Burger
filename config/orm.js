@@ -44,6 +44,8 @@ function printQuestionMarks(num) {
       });
     },
     create: function(table, cols, vals, cb) {
+      console.log(vals);
+      
       var queryString = "INSERT INTO " + table;
   
       queryString += " (";

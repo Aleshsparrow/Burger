@@ -1,3 +1,12 @@
 /* .body{
     background-color: red;
 } */
+
+.delete-burger{
+    margin: 5px;
+    box-shadow: slategrey;
+}
+.eat-burger{
+    margin: 5px;
+    box-shadow: slategrey;
+}

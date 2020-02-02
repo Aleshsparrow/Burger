@@ -1,7 +1,7 @@
 
 <h1>Burgers!</h1>
 
-<img src="/public/burger.jpg" style="height: 200px; width: 200px;" alt="burger">
+{{!-- <img src="../public/burger.jpg" style="height: 200px; width: 200px" alt="burger"> --}}
 
 <ul>
   {{#each burgers}}
@@ -9,7 +9,7 @@
     <li>
 	    {{this.burger_name}}
 
-	    <button class="eat-burger" data-id="{{this.id}}" data-neworder="{{this.devoured}}">
+	    <button class="eat-burger" info="this" val="{{this.id}}" data-neworder="{{this.devoured}}">
 		    {{#if devoured}}GREAT!{{else}}DEVOUR IT{{/if}}
 	    </button>
 
