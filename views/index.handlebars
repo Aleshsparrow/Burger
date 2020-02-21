@@ -1,7 +1,12 @@
 
+
+
+
 <h1>Burgers!</h1>
 
-{{!-- <img src="../public/burger.jpg" style="height: 200px; width: 200px" alt="burger"> --}}
+<img class="image" src="../public/burger.jpg" alt="">
+
+<div id="image"></div>
 
 <ul>
   {{#each burgers}}
@@ -47,8 +52,10 @@
 
   <button id="submit" type="submit">Add Burger</button>
 </form>
-{{!-- 
-<script>
+
+
+
+{{!-- <script>
     $(document).on("click", ".eat-burger", (event) => {
     // event.preventDefault()
     console.log("click")
